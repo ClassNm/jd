@@ -18,7 +18,7 @@ export default {
         }
     },
     mounted() {
-        window.addEventListener('scroll',()=>{
+        document.body.addEventListener('touchmove',()=>{
             let t = document.documentElement.scrollTop;
             console.log(t);
             if(t > 0){
