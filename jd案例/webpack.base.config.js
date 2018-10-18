@@ -46,7 +46,12 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 include: [
-                    resolve('./src')]
+                    resolve('./src'),
+                    // resolve('./node_modules/iview/src'),
+                    // resolve('./node_modules/iview/dist'),
+                    // resolve('./node_modules/swiper/src'),
+                    // resolve('./node_modules/swiper/dist')
+                ]
             },
             {
                 test: /\.css$/,
