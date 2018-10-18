@@ -20,6 +20,7 @@ export default {
     mounted() {
         window.addEventListener('scroll',()=>{
             let t = document.documentElement.scrollTop;
+            console.log(t);
             if(t > 0){
                 this.isOpa = false
             }else{
