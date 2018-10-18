@@ -4,7 +4,8 @@
             <Icon type="chevron-left"></Icon>
         </div>
         <div class="search_box lt">
-            {{title}}    
+            <span v-if="title">{{title}}</span>
+            <slot v-else></slot>    
         </div>
         <div class="rt">
             <Icon type="more"></Icon>

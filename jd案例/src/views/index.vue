@@ -51,6 +51,7 @@
             <Col span="4" class="tab">
                 <router-link to="/cart">
                     <Icon type="ios-cart-outline"  size="20"></Icon>
+                    {{this.$store.getters.num}}
                     <div>购物车</div>
                 </router-link>
             </Col>

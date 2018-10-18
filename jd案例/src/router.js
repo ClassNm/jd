@@ -49,6 +49,10 @@ const routers = [
 {
     path: '/search',
     component:(res)=> require(['./views/search'],res)
+}, 
+{
+    path: '/product',
+    component: (res) => require(['./views/product'], res)
 }
 ];
 export default routers;

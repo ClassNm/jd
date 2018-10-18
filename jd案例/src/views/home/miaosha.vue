@@ -19,7 +19,7 @@
         <div class="over_box">
             <div class="scroll_box">
                 <ul :style="{width:liW*num+'px'}" ref='ul'>
-                    <li class='lt' v-for='i in num' ref="li">
+                    <li class='lt' v-for='i in num' ref="li" @click='buy(i)'>
                         <img src="https://img14.360buyimg.com/n1/s200x200_jfs/t21064/116/2688094925/87836/e24c0e00/5b615f40Ndba79345.jpg.dpg" alt="">
                         <div class="new_price">￥1330</div>
                         <div class="old_price">￥1450</div>
@@ -48,7 +48,7 @@
         },
         methods:{
             timeCount(){
-                let time = '2018-10-18';
+                let time = '2018-10-19';
                 setInterval(()=>{
                     this.computedTime(time);
                 },1000)
@@ -65,6 +65,9 @@
                 this.hour = h < 10 ? `0`+h : h;
                 this.minute = m < 10 ? '0'+m : m;
                 this.second = s < 10 ? "0" + s : s;
+            },
+            buy(id){
+                this.$router.push({path:'/product',query:{id:id}})
             }
         }
     }

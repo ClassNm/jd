@@ -38,19 +38,46 @@ router.afterEach(() => {
 
 const store = new Vuex.Store({
     state: {
-
+        goods:[]
     },
     getters: {
-
+        num(state){
+            let list = state.goods;
+            let n = 0;
+            list.forEach((item) => {
+                n += item.num * 1
+            })
+            return n;
+        }
     },
     mutations: {
-
+        add(state,obj){
+            if(state.goods.indexOf(obj)!=-1){
+                obj.num++;
+            }else{
+                state.goods.push(obj)
+            }
+        },
+        remove(state,obj){
+            state.goods = state.goods.filter((item)=>{
+                return item != obj
+            })
+        }
     },
     actions: {
-
+        add({commit},obj){
+            commit('add',obj)
+        },
+        remove({commit},obj){
+            commit('remove',obj)
+        }
     }
 });
 
+
+Vue.filter('money',function (value) {
+    return (value/100).toFixed(2)
+})
 
 new Vue({
     el: '#app',
